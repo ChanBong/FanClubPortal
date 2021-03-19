@@ -18,4 +18,6 @@ class Profile(models.Model):
         if img.height > 300 or img.width > 300:
             output_size = (300, 300)
             img.thumbnail(output_size)
+            if img.mode in ("RGBA", "P"):
+                img = img.convert("RGB")
             img.save(self.image.path)
