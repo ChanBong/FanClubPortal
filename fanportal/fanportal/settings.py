@@ -10,6 +10,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'users.apps.UsersConfig',
     'crispy_forms',
+    'channels',
+    'chat',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,6 +50,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'fanportal.wsgi.application'
+ASGI_APPLICATION = 'fanportal.asgi.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 
 
 # Database
@@ -99,6 +110,9 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
