@@ -3,12 +3,113 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Chat Rooms</title>
+    <title>Join Room</title>
+
+<style>
+
+
+body {
+  background: #2c3e50;
+  font-family: 'Lato', sans-serif;
+  color: #FDFCFB;
+  text-align: center;
+}
+
+
+form {
+  width: 450px;
+  margin: 17% auto;
+}
+
+
+.header {
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+
+.description {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1.3em;
+  margin: -2px 0 45px;
+}
+
+
+.input {
+  display: flex;
+  align-items: center;
+}
+
+
+.button {
+  height: 44px;
+  border: none;
+}
+
+  
+#room-name-input {
+  width: 75%;
+  background: #FDFCFB;
+  font-family: inherit;
+  color: #737373;
+  letter-spacing: 1px;
+  max-width: 500px;
+  text-indent: 5%;
+  margin-left: 300px;
+  border-radius: 5px 0 0 5px;
+}
+
+
+#room-name-submit {
+  width: 25%;
+  height: 46px;
+  background: #E86C8D;
+  font-family: inherit;
+  font-weight: bold;
+  color: inherit;
+  letter-spacing: 1px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background .3s ease-in-out;
+}
+  
+
+#submit:hover {
+  background: #d45d7d;
+}
+  
+
+input:focus {
+  outline: none;
+  outline: 2px solid #E86C8D;
+  box-shadow: 0 0 2px #E86C8D;
+}
+
+</style>
 </head>
+
 <body>
+
+        <div class="header">
+           <p>Creat or join a room !!</p>
+        </div>
+        <div class="description">
+          <p>If the room wasn't there it will be created</p>
+        </div>
+        <div class="input">
+          <input id="room-name-input" type="text" class="button" name="email" placeholder="Endgame">
+          <input id="room-name-submit" type="submit" class="button"  value="JOIN">
+        </div>
+
+
+<!-- <div class = user_input>
     What chat room would you like to enter?<br/>
-    <input id="room-name-input" type="text" size="100"/><br/>
+    <input id="room-name-input" type="text" width=10px size="50"/><br/>
     <input id="room-name-submit" type="button" value="Enter"/>
+</div> -->
+
 
     <script>
         document.querySelector('#room-name-input').focus();

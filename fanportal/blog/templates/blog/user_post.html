@@ -1,7 +1,23 @@
 {% extends "blog/base.html" %}
 {% block content %}
-    <h1 class="mb-3">Post by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
-    {% for post in posts %}
+{% for post in posts %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ post.author.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ view.kwargs.username }}</h2>
+          <p class="text-secondary">{{ view.kwargs.email }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="content-section">
+        Bio : <p> {{ post.author.profile.bio }}</p>
+        Member of : <ul>
+          <li> Endgame </li>
+          <li> Game of thrones </li>
+        </ul>
+      </div>
+    <h4>Posts by {{ view.kwargs.username }}</h4>
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
           <div class="media-body">
